@@ -1,11 +1,11 @@
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ttt_ai/screens/home_screen/computer.dart';
+import 'package:ttt_ai/screens/home_screen/ai.dart';
 import 'package:ttt_ai/screens/home_screen/friend.dart';
 import 'package:ttt_ai/utils/button.dart';
 
-import '../assests/fonts/fonts.dart';
+import '../assets/fonts/fonts.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -36,7 +36,7 @@ class HomeScreen extends StatelessWidget {
                     width: 100,
                     height: 100,
                     child: Image.asset(
-                      'lib/assests/images/ttt.png',
+                      'lib/assets/images/ttt.png',
                       fit: BoxFit.cover,
                     ),
                   ),

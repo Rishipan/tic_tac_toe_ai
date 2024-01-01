@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../assests/fonts/fonts.dart';
+import '../../assets/fonts/fonts.dart';
 
 class FriendScreen extends StatefulWidget {
   const FriendScreen({super.key});

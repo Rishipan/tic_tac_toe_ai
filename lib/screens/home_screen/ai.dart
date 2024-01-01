@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-import '../../assests/fonts/fonts.dart';
+import '../../assets/fonts/fonts.dart';
 
 class AiScreen extends StatefulWidget {
   const AiScreen({super.key});
@@ -242,7 +242,6 @@ class _AiScreenState extends State<AiScreen> {
                               const SizedBox(height: 10),
                               Text(
                                 exScore.toString(),
-                                // '--',
                                 style: gameFontBright,
                               ),
                             ],
@@ -260,7 +259,6 @@ class _AiScreenState extends State<AiScreen> {
                               const SizedBox(height: 10),
                               Text(
                                 ohScore.toString(),
-                                // '--',
                                 style: gameFontBright,
                               ),
                             ],
@@ -268,14 +266,14 @@ class _AiScreenState extends State<AiScreen> {
                         ),
                       ],
                     ),
-                    // (exTurn)
+                    // (isPlayer1Turn)
                     //     ? Text(
-                    //         'X',
-                    //         style: gameFontBoldBright,
+                    //         'Your Turn',
+                    //         style: gameFontBright,
                     //       )
                     //     : Text(
-                    //         'O',
-                    //         style: gameFontBoldBright,
+                    //         'AI Turn',
+                    //         style: gameFontBright,
                     //       ),
                   ],
                 ),
