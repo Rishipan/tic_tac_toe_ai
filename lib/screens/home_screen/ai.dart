@@ -134,6 +134,12 @@ class _AiScreenState extends State<AiScreen> {
     setState(() {
       gameFinished = true;
     });
+    String win = '';
+    if (winner == 'X') {
+      win = 'Congrulation You Are Winner';
+    } else {
+      win = 'AI Won';
+    }
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
@@ -143,7 +149,7 @@ class _AiScreenState extends State<AiScreen> {
           style: gameFontBoldBright,
         ),
         content: Text(
-          'Winner is : $winner',
+          win,
           style: gameFontBright,
         ),
         actions: [
@@ -266,15 +272,6 @@ class _AiScreenState extends State<AiScreen> {
                         ),
                       ],
                     ),
-                    // (isPlayer1Turn)
-                    //     ? Text(
-                    //         'Your Turn',
-                    //         style: gameFontBright,
-                    //       )
-                    //     : Text(
-                    //         'AI Turn',
-                    //         style: gameFontBright,
-                    //       ),
                   ],
                 ),
               ),
