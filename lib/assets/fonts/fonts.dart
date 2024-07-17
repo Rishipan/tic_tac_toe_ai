@@ -1,27 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-var gameFontDark = GoogleFonts.pressStart2p(
+var gameFontDark = GoogleFonts.robotoMono(
     textStyle: const TextStyle(
   color: Colors.black,
-  letterSpacing: 3,
-  fontSize: 10,
+  letterSpacing: 2,
+  fontSize: 14,
 ));
-var gameFontBoldDark = GoogleFonts.pressStart2p(
+var gameFontBoldDark = GoogleFonts.robotoMono(
     textStyle: const TextStyle(
   color: Colors.black,
-  letterSpacing: 3,
+  letterSpacing: 2,
   fontSize: 20,
 ));
-var gameFontBoldBright = GoogleFonts.pressStart2p(
+var gameFontBoldBright = GoogleFonts.robotoMono(
     textStyle: const TextStyle(
   color: Colors.white,
-  letterSpacing: 3,
+  letterSpacing: 2,
   fontSize: 20,
 ));
-var gameFontBright = GoogleFonts.pressStart2p(
+var gameFontBright = GoogleFonts.robotoMono(
     textStyle: const TextStyle(
   color: Colors.white,
-  letterSpacing: 3,
+  letterSpacing: 2,
   fontSize: 10,
 ));

@@ -1,17 +1,19 @@
 import 'dart:math';
 
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-import '../../assets/fonts/fonts.dart';
+import '../../../assets/fonts/fonts.dart';
 
-class AiScreen extends StatefulWidget {
-  const AiScreen({super.key});
+class UnbeatableAI extends StatefulWidget {
+  const UnbeatableAI({super.key});
 
   @override
-  State<AiScreen> createState() => _AiScreenState();
+  State<UnbeatableAI> createState() => _UnbeatableAIState();
 }
 
-class _AiScreenState extends State<AiScreen> {
+class _UnbeatableAIState extends State<UnbeatableAI> {
   List<String> board = List.filled(9, '');
   bool isPlayer1Turn = true; // Player 1 starts
   bool gameFinished = false;
@@ -221,117 +223,143 @@ class _AiScreenState extends State<AiScreen> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.grey.shade900,
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const SizedBox(height: 40),
-              Expanded(
-                child: Column(
-                  children: [
-                    Text(
-                      "ScoreBoard",
-                      style: gameFontBoldBright,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+        body: Stack(
+          children: [
+            Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const SizedBox(height: 40),
+                  Expanded(
+                    child: Column(
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.all(30),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'Your Score',
-                                style: gameFontBright,
-                              ),
-                              const SizedBox(height: 10),
-                              Text(
-                                exScore.toString(),
-                                style: gameFontBright,
-                              ),
-                            ],
-                          ),
+                        Text(
+                          "Playing With Unbeatable AI",
+                          style: gameFontBoldBright,
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(30),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'AI Score',
-                                style: gameFontBright,
+                        Text(
+                          "ScoreBoard",
+                          style: gameFontBoldBright,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(20),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    'Your Score',
+                                    style: gameFontBright,
+                                  ),
+                                  const SizedBox(height: 10),
+                                  Text(
+                                    exScore.toString(),
+                                    style: gameFontBright,
+                                  ),
+                                ],
                               ),
-                              const SizedBox(height: 10),
-                              Text(
-                                ohScore.toString(),
-                                style: gameFontBright,
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(20),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    'AI Score',
+                                    style: gameFontBright,
+                                  ),
+                                  const SizedBox(height: 10),
+                                  Text(
+                                    ohScore.toString(),
+                                    style: gameFontBright,
+                                  ),
+                                ],
                               ),
-                            ],
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    flex: 3,
+                    child: Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: GridView.builder(
+                        shrinkWrap: true,
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 3,
+                          crossAxisSpacing: 4.0,
+                          mainAxisSpacing: 4.0,
+                        ),
+                        itemBuilder: (BuildContext context, int index) {
+                          return GestureDetector(
+                            onTap: () {
+                              makeMove(index);
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                  color: Colors.grey.shade700,
+                                ),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  board[index],
+                                  style: gameFontBoldBright,
+                                ),
+                              ),
+                            ),
+                          );
+                        },
+                        itemCount: 9,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  Expanded(
+                      child: Center(
+                    child: Column(
+                      children: [
+                        GestureDetector(
+                          onTap: resetGame,
+                          child: const Icon(
+                            Icons.refresh_rounded,
+                            color: Colors.grey,
                           ),
                         ),
                       ],
                     ),
-                  ],
-                ),
+                  )),
+                ],
               ),
-              Expanded(
-                flex: 3,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: GridView.builder(
-                    shrinkWrap: true,
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3,
-                      crossAxisSpacing: 4.0,
-                      mainAxisSpacing: 4.0,
-                    ),
-                    itemBuilder: (BuildContext context, int index) {
-                      return GestureDetector(
-                        onTap: () {
-                          makeMove(index);
-                        },
-                        child: Container(
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Colors.grey.shade700,
-                            ),
-                          ),
-                          child: Center(
-                            child: Text(
-                              board[index],
-                              style: gameFontBoldBright,
-                            ),
-                          ),
+            ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 16.0),
+                child: AnimatedTextKit(
+                  animatedTexts: [
+                    TyperAnimatedText(
+                      ' @COBACREATION',
+                      textStyle: GoogleFonts.robotoMono(
+                        textStyle: const TextStyle(
+                          color: Colors.white,
+                          letterSpacing: 3,
+                          fontSize: 15,
                         ),
-                      );
-                    },
-                    itemCount: 9,
-                  ),
-                ),
-              ),
-              Expanded(
-                  child: Center(
-                child: Column(
-                  children: [
-                    GestureDetector(
-                      onTap: resetGame,
-                      child: const Icon(
-                        Icons.refresh_rounded,
-                        color: Colors.grey,
                       ),
-                    ),
-                    const SizedBox(height: 15),
-                    Text(
-                      '@CREATEDBYCOBA',
-                      style: gameFontBright,
+                      speed: const Duration(milliseconds: 100),
                     ),
                   ],
+                  isRepeatingAnimation: true,
                 ),
-              )),
-            ],
-          ),
+              ),
+            ),
+          ],
         ),
       ),
     );

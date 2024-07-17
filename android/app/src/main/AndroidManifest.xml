@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ttt_ai">
    <application
-        android:label="ttt_ai"
+        android:label="3T"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity

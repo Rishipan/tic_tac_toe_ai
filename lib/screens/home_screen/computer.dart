@@ -1,13 +1,13 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ttt_ai/screens/home_screen/freind/finite.dart';
-import 'package:ttt_ai/screens/home_screen/freind/infinite.dart';
+import 'package:ttt_ai/screens/home_screen/computer/beatable.dart';
+import 'package:ttt_ai/screens/home_screen/computer/unbeatable.dart';
 
 import '../../utils/button.dart';
 
-class FriendScreen extends StatelessWidget {
-  const FriendScreen({super.key});
+class ComputerScreen extends StatelessWidget {
+  const ComputerScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class FriendScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Play With Friend',
+                    'Play With Computer',
                     style: GoogleFonts.robotoMono(
                       textStyle: const TextStyle(
                         color: Colors.white,
@@ -36,10 +36,10 @@ class FriendScreen extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const FiniteScreen()));
+                              builder: (context) => const BeatableAI()));
                     },
                     child: const MyButton(
-                      name: 'Finite',
+                      name: 'Normal',
                       color: Colors.white,
                     ),
                   ),
@@ -48,10 +48,10 @@ class FriendScreen extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const InfiniteScreen()));
+                              builder: (context) => const UnbeatableAI()));
                     },
                     child: const MyButton(
-                      name: 'Infinite',
+                      name: 'Unbeatable',
                       color: Colors.white,
                     ),
                   ),
@@ -65,7 +65,7 @@ class FriendScreen extends StatelessWidget {
                 child: AnimatedTextKit(
                   animatedTexts: [
                     TyperAnimatedText(
-                      ' @COBACREATION',
+                      '@COBACREATION',
                       textStyle: GoogleFonts.robotoMono(
                         textStyle: const TextStyle(
                           color: Colors.white,
