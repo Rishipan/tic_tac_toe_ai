@@ -1,6 +1,6 @@
-## 3T {Tic-Tac-Toe}
+# 3T {Tic-Tac-Toe}
 
-# https://drive.google.com/file/d/1e2DOjnDdhzrXoSFFhJ4lTREHCTLmK9c_/view?usp=sharing
+## https://drive.google.com/file/d/1e2DOjnDdhzrXoSFFhJ4lTREHCTLmK9c_/view?usp=sharing
 
 Download and Enjoy this game.
 
