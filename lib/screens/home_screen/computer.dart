@@ -14,6 +14,22 @@ class ComputerScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.grey.shade900,
+        appBar: AppBar(
+          backgroundColor: Colors.black,
+          automaticallyImplyLeading: false,
+          title: Center(
+            child: Text(
+              'TIC TAC TOE',
+              style: GoogleFonts.pressStart2p(
+                fontSize: 14,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                // backgroundColor: Colors.pink,
+                decoration: TextDecoration.underline,
+              ),
+            ),
+          ),
+        ),
         body: Stack(
           children: [
             Center(

@@ -39,6 +39,11 @@ dependencies:
   avatar_glow: ^3.0.1
   flutter_launcher_icons: ^0.13.1
   animated_text_kit: ^4.2.1
+  firebase_core: ^2.24.2
+  cloud_firestore: ^4.14.0
+  connectivity_plus: ^5.0.2
+  socket_io_client: ^2.0.3+1
+  provider: ^6.1.2
 
 dev_dependencies:
   flutter_test:
